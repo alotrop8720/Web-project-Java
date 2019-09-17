@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://java.sun.com/xml/ns/persistence"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>project_add</servlet-name>
+        <servlet-class>by.qulixsystem.practice.servlets.addProjectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>project_add</servlet-name>
+        <url-pattern>/pages/add_form_project</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>worker_add</servlet-name>
+        <servlet-class>by.qulixsystem.practice.servlets.addWorkerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>worker_add</servlet-name>
+        <url-pattern>/pages/add_form_worker</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>task_add</servlet-name>
+        <servlet-class>by.qulixsystem.practice.servlets.addTaskServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>task_add</servlet-name>
+        <url-pattern>/pages/add_form_task</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>delete_project</servlet-name>
+        <servlet-class>by.qulixsystem.practice.servlets.deleteProjectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete_project</servlet-name>
+        <url-pattern>/pages/projects</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>delete_worker</servlet-name>
+        <servlet-class>by.qulixsystem.practice.servlets.deleteWorkerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete_worker</servlet-name>
+        <url-pattern>/pages/workers</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>delete_task</servlet-name>
+        <servlet-class>by.qulixsystem.practice.servlets.deleteTaskServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete_task</servlet-name>
+        <url-pattern>/pages/tasks</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>update_project</servlet-name>
+        <servlet-class>by.qulixsystem.practice.servlets.updateProjectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>update_project</servlet-name>
+        <url-pattern>/pages/update_form_project</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>update_worker</servlet-name>
+    <servlet-class>by.qulixsystem.practice.servlets.updateWorkerServlet</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>update_worker</servlet-name>
+        <url-pattern>/pages/update_form_worker</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>update_task</servlet-name>
+        <servlet-class>by.qulixsystem.practice.servlets.updateTaskServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>update_task</servlet-name>
+        <url-pattern>/pages/update_form_task</url-pattern>
+    </servlet-mapping>
+
+
+
+
+    <filter>
+        <filter-name>downloadProject</filter-name>
+        <filter-class>by.qulixsystem.practice.filters.ContextProject</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>downloadProject</filter-name>
+        <url-pattern>/pages/projects.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>downloadTask</filter-name>
+        <filter-class>by.qulixsystem.practice.filters.ContextTask</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>downloadTask</filter-name>
+        <url-pattern>/pages/tasks.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>downloadWorker</filter-name>
+        <filter-class>by.qulixsystem.practice.filters.ContextWorker</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>downloadWorker</filter-name>
+        <url-pattern>/pages/workers.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>updateProject</filter-name>
+        <filter-class>by.qulixsystem.practice.filters.UpdateProject</filter-class>
+        <async-supported>true</async-supported>
+    </filter>
+    <filter-mapping>
+        <filter-name>updateProject</filter-name>
+        <url-pattern>/pages/update_form_project.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>updateWorker</filter-name>
+        <filter-class>by.qulixsystem.practice.filters.UpdateWorker</filter-class>
+        <async-supported>true</async-supported>
+    </filter>
+    <filter-mapping>
+        <filter-name>updateWorker</filter-name>
+        <url-pattern>/pages/update_form_worker.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>updateTask</filter-name>
+        <filter-class>by.qulixsystem.practice.filters.UpdateTask</filter-class>
+        <async-supported>true</async-supported>
+    </filter>
+    <filter-mapping>
+        <filter-name>updateTask</filter-name>
+        <url-pattern>/pages/update_form_task.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>addWorker</filter-name>
+        <filter-class>by.qulixsystem.practice.filters.AddTask</filter-class>
+        <async-supported>true</async-supported>
+    </filter>
+    <filter-mapping>
+        <filter-name>addWorker</filter-name>
+        <url-pattern>/pages/add_form_task.jsp</url-pattern>
+    </filter-mapping>
+
+
+
+</web-app>
